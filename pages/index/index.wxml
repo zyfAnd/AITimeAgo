@@ -1,0 +1,49 @@
+<view class="container" style="width: {{width}}px; height: {{height}}px; ">
+ 
+    <view class="userinfo-avatar" >
+        <image wx:if="{{ !testPicFile }}" class="userinfo-avatar" src="../../asset/img/share.jpg"></image>
+        <image wx:else class="userinfo-avatar" src="{{ testPicFile }}"></image>
+    </view>
+    <view wx:if="{{ testPicFile && !testPicResult }}" class="close" bindtap="handleCancelPic">
+        <!-- <i class="arrow">×</i> -->
+    </view>
+   
+    <view class="pic-result" wx:if="{{ testPicResult }}">
+     <!-- <view class="score-box"> 名字 <span >{{ testOfficalRes.officalName }}</span>, 官阶 {{ testOfficalRes.officalRank }}</view>
+      <view class="score-box"><i class="icon-love"></i> 房室 <span>三妻四妾</span>, 贵庚 {{ testPicResult.defeat}}% </view>
+        <view class="score-box"><i class="icon-love"></i> 颜值 <span>{{ testPicResult.beauty }}分</span>, 击败 {{ testPicResult.defeat}}% 用户</view> -->
+          <view class="score-ext" >
+           <span wx:if="{{ userInfo }}">用户: {{userInfo.nickName}}</span> 
+          </view> 
+          <view class="score-ext" >
+            <span >名字: {{ testOfficalRes.officalName }}</span>
+            <span>官阶: {{ testOfficalRes.officalRank  }}</span>
+        </view>
+        
+        <view class="score-ext">
+          <span>颜值: {{testPicResult.beauty }} </span>
+          <span>击败: {{testPicResult.defeat }}% 用户 </span>
+       </view>
+        <view class="score-ext">
+   
+            <span>性别: <i class="icon-{{ testPicResult.gender }}"></i></span>
+            <span>年龄: {{ testPicResult.age }}</span>
+        </view>
+    </view>
+    <view>
+         <button wx:if="{{ !testPicFile }}" class="btn btn-select" bindtap="handleUploadPic">选择照片/拍照</button>
+        <button wx:if="{{ testPicFile && !testPicResult }}" class="btn btn-compute" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">AI数据分析</button>
+        <view>
+          <button open-type="share" wx:if="{{ testPicResult }}" class="btn btn-share">炫耀一下</button>
+        <button wx:if="{{ testPicResult }}" class="btn btn-bottom" bindtap="handlePlayAgain">再试一次</button>
+        </view>
+      
+         <!-- <button wx:if="{{ testPicResult }}" src='../../asset/icon/friend.png' class="post" bindtap="savePicture">保存到相册</button> -->
+    </view>
+
+     <!-- <painter palette="{{data}}" bind:imgOK="onImgOK" />  -->
+    <view>
+     <ad  unit-id="adunit-4e08163499ff3639"></ad>
+    </view> 
+    
+</view>

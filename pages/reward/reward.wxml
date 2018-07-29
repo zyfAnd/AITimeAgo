@@ -1,0 +1,19 @@
+<view  >
+    
+    <view class='container' bindtap='navigate'>
+
+    <image class='userinfo-avatar' src='../../asset/img/luncy.jpeg'></image>
+    <text >看视频学英语</text>
+
+    <!-- <!-- <image  bindtap="handleRewardQr" class="reward-pic" src="../../asset/img/weixingongzhonghao.jpg"></image>  -->
+    <!-- <text class="text-title"></text>  -->
+
+      <text class="text-tips">了解更多</text>  
+</view>
+<view bindtap='handleRewardQr' class="container">
+     <image  class="reward-pic" src="../../asset/img/weixingongzhonghao.jpg"></image> 
+    <text class="text-title">专注小程序的创业者</text>
+        <text class="text-title">了解更多,请关注公众帐号</text>
+    <!-- <text class="text-tips">点击赞赏码识别并赞赏</text> -->
+    </view>
+</view>

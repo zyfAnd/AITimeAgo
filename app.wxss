@@ -1,0 +1,12 @@
+.icon-arrow:after{
+    content: "\2715";
+}
+.icon-love:after {
+    content: "\2740";
+}
+.icon-male:after {
+    content: "\2642";
+}
+.icon-female:after {
+    content: "\2640";
+}
